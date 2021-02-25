@@ -1,12 +1,12 @@
-import '../lib/bcdice/arithmetic_evaluator';
-import '../lib/bcdice/common_command';
-import '../lib/bcdice/base';
-import '../lib/bcdice/preprocessor';
+import "../lib/bcdice/arithmetic_evaluator";
+import "../lib/bcdice/common_command";
+import "../lib/bcdice/base";
+import "../lib/bcdice/preprocessor";
 
-import { BCDice } from './internal';
-import { BaseInstance } from './internal/types/base';
-import Result, { parseResult } from './result';
-import { RandomizerInstance } from './internal/types/randomizer';
+import { BCDice } from "./internal";
+import { BaseInstance } from "./internal/types/base";
+import Result, { parseResult } from "./result";
+import { RandomizerInstance } from "./internal/types/randomizer";
 
 export default class Base {
   static eval(command: string): Result | null {
@@ -14,7 +14,7 @@ export default class Base {
     return parseResult(result);
   }
 
-  private readonly internal: BaseInstance;
+  protected readonly internal: BaseInstance;
 
   get randomizer(): RandomizerInstance {
     return this.internal.randomizer;
